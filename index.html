@@ -134,6 +134,34 @@
             filter: none;        /* Asigură culorile originale */
             opacity: 1;          /* Vizibilitate completă */
         }
+        /* --- FIX PENTRU TELEFOANE (Butoane care ies din ecran) --- */
+        @media (max-width: 480px) {
+            /* Micșorăm spațiul din stânga și dreapta al header-ului */
+            .header-content { 
+                padding: 0 10px !important; 
+            }
+            
+            /* Micșorăm puțin logo-ul */
+            .logo { 
+                font-size: 15px !important; 
+            }
+
+            /* Apropiem butoanele între ele */
+            .header-actions { 
+                gap: 5px !important; 
+            }
+
+            /* Facem butoanele mai compacte */
+            .btn-nav-simple { 
+                font-size: 11px !important; 
+                padding: 6px 5px !important; 
+            }
+            
+            .btn-nav-cta { 
+                font-size: 11px !important; 
+                padding: 6px 10px !important; 
+            }
+        }
     </style>
 </head>
 <body>
@@ -525,3 +553,4 @@
 </body>
 
 </html>
+
