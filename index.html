@@ -120,6 +120,31 @@
         .price-table tr:last-child td { border-bottom: none; }
         .price-table td:first-child, .price-table th:first-child { text-align: left; }
 
+        del {
+    display: block; /* Afișează prețul vechi deasupra celui nou */
+    color: #999;
+    font-size: 0.85em;
+    text-decoration: line-through;
+}
+
+/* Stil preț nou (accentuat) */
+.final-price {
+    display: block;
+    color: #e74c3c; /* Roșu pentru promoție */
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+/* Eticheta de reducere din titlu */
+.promo-badge {
+    background-color: #27ae60;
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.7em;
+    margin-left: 10px;
+    vertical-align: middle;
+}
         .hidden { display: none; }
         .float-wa { position: fixed; bottom: 30px; right: 30px; background: var(--green); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 10px 20px rgba(0,0,0,0.3); transition: 0.3s; z-index: 900; }
         .float-wa:hover { transform: scale(1.1); }
@@ -346,23 +371,43 @@
             <button class="close-modal" onclick="closeModal('modal-prices')">✕</button>
             <h2 style="margin-bottom:20px;">Listă Prețuri</h2>
             
-            <div class="price-category-title">PACHET MONTAJ (Schimb)</div>
+            <div class="price-category-title">PACHET SCHIMB ( Echilibrat din partea noastra )</div>
             <table class="price-table">
-                <tr><th>DIAMETRU</th><th>TURISM</th><th>SUV/4X4</th></tr>
-                <tr><td>13” – 14”</td><td>160 Lei</td><td>-</td></tr>
-                <tr><td>15” – 16”</td><td>180 Lei</td><td>-</td></tr>
-                <tr><td>17” – 18”</td><td>200 Lei</td><td>180 Lei</td></tr>
-                <tr><td>19” – 20”</td><td>240 Lei</td><td>200 Lei</td></tr>
-                <tr><td>≥ 21”</td><td>320 Lei</td><td>360 Lei</td></tr>
+              <thead>
+        <tr>
+            <th>DIAMETRU</th>
+            <th>TURISM</th>
+            <th>AUTOUTILITARĂ</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>14” – 16”</td>
+            <td><del>200 Lei</del> <span class="final-price">140 Lei</span></td>
+            <td><del>220 Lei</del> <span class="final-price">160 Lei</span></td>
+        </tr>
+        <tr>
+            <td>17” – 19”</td>
+            <td><del>320 Lei</del> <span class="final-price">260 Lei</span></td>
+            <td><del>360 Lei</del> <span class="final-price">300 Lei</span></td>
+        </tr>
+        <tr>
+            <td>20” – 21”</td>
+            <td><del>440 Lei</del> <span class="final-price">380 Lei</span></td>
+            <td><del>460 Lei</del> <span class="final-price">400 Lei</span></td>
+        </tr>
             </table>
 
-            <div class="price-category-title">ECHILIBRAT STANDARD</div>
+            <div class="price-category-title">ECHILIBRAT</div>
             <table class="price-table">
-                <tr><th>DIAMETRU</th><th>TURISM</th><th>SUV/4X4</th></tr>
-                <tr><td>13” – 16”</td><td>90 Lei</td><td>100 Lei</td></tr>
-                <tr><td>17” – 18”</td><td>100 Lei</td><td>120 Lei</td></tr>
-                <tr><td>19” – 20”</td><td>120 Lei</td><td>140 Lei</td></tr>
-                <tr><td>≥ 21”</td><td>160 Lei</td><td>180 Lei</td></tr>
+                     <thead>
+        <tr>
+            <th>DIAMETRU</th>
+            <th>TURISM</th>
+            <th>AUTOUTILITARĂ</th>
+        </tr>
+    </thead>
+                  <tr><td>14” – 21”</td><td>60 Lei</td><td>80 Lei</td></tr>
             </table>
 
             <div class="price-category-title">HOTEL ANVELOPE</div>
@@ -375,8 +420,11 @@
 
             <div class="price-category-title">ALTE SERVICII</div>
             <table class="price-table">
-                <tr><td>Reparație Pană (12” - 17”)</td><td>70 Lei</td></tr>
-                <tr><td>Reparație Pană (18” - 23”)</td><td>80 Lei</td></tr>
+                <tr><td>Reparație Pană Snur (14” – 21”)</td><td>25 Lei</td></tr>
+                <tr><td>Reparație Pană Petec (14” – 16”)</td><td>45 Lei</td></tr>
+                <tr><td>Reparație Pană Petec (17” – 19”)</td><td>65 Lei</td></tr>
+                <tr><td>Reparație Pană Petec (20” – 21”)</td><td>95 Lei</td></tr>
+
                 <tr><td>Înlocuire Valvă Cauciuc</td><td>5 Lei/buc</td></tr>
             </table>
 
@@ -553,5 +601,6 @@
 </body>
 
 </html>
+
 
 
